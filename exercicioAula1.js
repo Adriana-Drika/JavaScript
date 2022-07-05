@@ -79,11 +79,10 @@ let n1 = Number.parseFloat(prompt('informe primeira nota'))
 let n2 = Number.parseFloat(prompt('informe segunda nota'))
 let n3 = Number.parseFloat(prompt('informe terceira nota'))
 
-if( isNaN(n1)&& isNaN(n2)&& isNaN(n3)) {
+if( isNaN(n1)|| isNaN(n2) || isNaN(n3)) {
    alert("entradas invalidas")
 }else{
    let media = parseFloat(n1 + n2 + n3)/3
- 
      
    if(media > 7){ 
       alert('aprovado')
@@ -109,7 +108,8 @@ if (fazerCheckout) {
       alert('Ok.Até breve!!')
 }else{
    let dias = Number.parseInt(prompt('Quantos dias gostaria de estender a hospedagem ?'))
-   if(dias !== typeof "number" && dias > 0){
+   if (isNaN(dias)  && (dias > 0)){
       alert( `Sua estadia foi prorrogada para mais ${ dias } dias`)
    }
 }
+
