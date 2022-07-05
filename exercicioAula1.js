@@ -67,8 +67,6 @@ if(operacao==='+'){
    alert('valor inválido');
 }
 
-/* ACHO QUE ESTÁ OK
-
 
 
 /*
@@ -97,9 +95,6 @@ if(n1 !== typeof "number" && n2 !== typeof "number" && n3 !== typeof "number" ){
    }
 }
 
-   /*Não consegui completar...
-  
-
 /*
 6) Crie um programa que solicite para o usuário que escolha uma das opções do menu:
    1 - Fazer checkin (exibe um alert de boas vindas);
@@ -119,5 +114,3 @@ if (fazerCheckout) {
       alert( `Sua estadia foi prorrogada para mais ${ dias } dias`)
    }
 }
-
-/*Não consegui VALIDAR*/
