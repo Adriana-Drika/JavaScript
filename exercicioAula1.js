@@ -75,20 +75,19 @@ if(operacao==='+'){
    Obs: adicione as validações para ter certeza que os números inseridos estão certos e caso algum número seja inválido façam os devidos tratamentos;
 */  
 
-
 let n1 = Number.parseFloat(prompt('informe primeira nota'))
 let n2 = Number.parseFloat(prompt('informe segunda nota'))
 let n3 = Number.parseFloat(prompt('informe terceira nota'))
 
-if(n1 !== typeof "number" && n2 !== typeof "number" && n3 !== typeof "number" ){
+if( isNaN(n1)&& isNaN(n2)&& isNaN(n3)) {
    alert("entradas invalidas")
 }else{
    let media = parseFloat(n1 + n2 + n3)/3
-   let resultado = media
+ 
      
-   if(resultado > 7){ 
+   if(media > 7){ 
       alert('aprovado')
-   }else if(resultado <= 7 && resultado >= 5){
+   }else if(media <= 7 && media >= 5){
       alert('recuperação')
    }else{
       alert('reprovado')
