@@ -56,21 +56,17 @@ let num2 =parseInt(prompt('Digite outro número por favor:'))
 let operacao=prompt('Escolha a operação  que deseja utilizar: Ex: +,-,*,/')
 
 if(operacao==='+'){
-   alert (num1 + num2)
-   
-}
-else if(operacao==='-' ){
-   alert (num1 - num2)
-}
-else if(operacao==='*' && num1 !=0 && num2 !=0){
-   alert (num1 * num2)
-}
-else if (operacao==='/' && num1 !=0 && num2 !=0){
-   alert( num1 /num2)
+   alert(num1 + num2)
+}else if(operacao === '-'){
+   alert(num1 - num2)
+}else if(operacao === '*' && num1 !== 0 && num2 !== 0){
+   alert(num1 * num2)
+}else if(operacao === '/' && num1 !== 0 && num2 !== 0){
+   alert(num1 /num2)
 }else{
    alert('valor inválido');
 }
-   
+
 /* ACHO QUE ESTÁ OK
 
 
@@ -86,15 +82,19 @@ let n1 = Number.parseFloat(prompt('informe primeira nota'))
 let n2 = Number.parseFloat(prompt('informe segunda nota'))
 let n3 = Number.parseFloat(prompt('informe terceira nota'))
 
-  let media = parseFloat(n1 + n2 + n3)/3
-  let resultado = media
-  
-  if(resultado > 7){ 
-   alert ('aprovado')
-}else if(resultado <= 7 && resultado >= 5){
-   alert('recuperação ')
+if(n1 !== typeof "number" && n2 !== typeof "number" && n3 !== typeof "number" ){
+   alert("entradas invalidas")
 }else{
-   alert('reprovado ')
+   let media = parseFloat(n1 + n2 + n3)/3
+   let resultado = media
+     
+   if(resultado > 7){ 
+      alert('aprovado')
+   }else if(resultado <= 7 && resultado >= 5){
+      alert('recuperação')
+   }else{
+      alert('reprovado')
+   }
 }
 
    /*Não consegui completar...
@@ -109,19 +109,15 @@ let n3 = Number.parseFloat(prompt('informe terceira nota'))
    
    Obs: caso não seja nenhuma dessas opções exiba um alerta de opção inválida   
 */  
-let fazerCheckin= alert( 'Faça seu checkin: Boas vindas!!')
-let fazerCheckout= confirm('Tem certeza que deseja efetuar seu Checkout? ')
-let confirmacao = fazerCheckout
-   if (confirmacao ===true) {
-        alert('Ok.Até breve!!')
-   }else if (confirmacao === false) {
-      let dias =prompt ('Quantos dias gostaria de estender a hospedagem ?')
-      let estenderHospedagem = dias 
-      
-        alert( `Sua estadia foi prorrogada para mais ${ dias } dias`)
-          {
-      }
+let fazerCheckin = alert( 'Faça seu checkin: Boas vindas!!')
+let fazerCheckout = confirm('Tem certeza que deseja efetuar seu Checkout? ')
+if (fazerCheckout) {
+      alert('Ok.Até breve!!')
+}else{
+   let dias = Number.parseInt(prompt('Quantos dias gostaria de estender a hospedagem ?'))
+   if(dias !== typeof "number" && dias > 0){
+      alert( `Sua estadia foi prorrogada para mais ${ dias } dias`)
    }
+}
 
-
-/*if (estenderHospedagem === typeof Number && estenderHospedagem > 0){ Não consegui VALIDAR*/
+/*Não consegui VALIDAR*/
