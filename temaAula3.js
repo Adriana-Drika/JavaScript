@@ -118,7 +118,6 @@ for(let i=0 ; i < 10; i++){
       lista.push(numeroImpar)
   }
 }
-
 console.log(lista)
 
 
@@ -130,3 +129,19 @@ console.log(lista)
  	um array ordenado (NÃO pode usar o método array.sort());
    // ex. funcaoOrdenaArray( [4, 5, 13, 7, 3, 12, 5, 2, 2] ) ===> retorna o array [ 2, 2, 3, 4, 5, 5, 7, 12, 13 ]
 */
+function ordenacaoSelecao(vetor) {
+   let n = vetor.length;
+   for (let i = 0; i < n - 1; i++) {
+     //Encontra o menor item da parte não ordenada
+     let min_idx = i;
+     for (let j = i + 1; j < n; j++)
+       if (vetor[j] < vetor[min_idx])
+         min_idx = j;
+     //Troca o menor com o primeiro elemento
+     let temp = vetor[min_idx];
+     vetor[min_idx] = vetor[i];
+     vetor[i] = temp;
+   }
+   console.log(vetor);
+ }
+ordenacaoSelecao( [4, 5, 13, 7, 3, 12, 5, 2, 2] )
