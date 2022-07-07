@@ -143,5 +143,6 @@ function ordenacaoSelecao(vetor) {
      vetor[i] = temp;
    }
    console.log(vetor);
+   
  }
 ordenacaoSelecao( [4, 5, 13, 7, 3, 12, 5, 2, 2] )
