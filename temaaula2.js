@@ -51,8 +51,6 @@ console.log(somaDosPares());
 
 
 
-
-
 /*
 3) Faça um programa onde o usuário possa escolher qual a tabuada que se deseja ver. Exiba (console) a tabuada desse número de 1 a 10;
 	 Exiba essa tabuada de forma organizada com os console.logs

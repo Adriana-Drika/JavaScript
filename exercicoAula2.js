@@ -5,6 +5,7 @@
 let ehSexta = confirm( "Hoje é Sexta-feira?")
   ? alert( "sextou" ) : alert( "nao sextou")
 
+  console.log(ehSexta)
 
 /*
 2) Crie um programa que imprima no console os números de 1 até 10;
