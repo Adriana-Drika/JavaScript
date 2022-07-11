@@ -38,20 +38,25 @@
 let sair = 1
 let opcaoSelecionada;
 let listaProdutos = [
-    {id: '1', descricao: 'banana', preco: 1.50},
-    {id: '2', descricao: 'maca', preco: 1.20},
-    {id: '3', descricao: 'abacaxi', preco: 2.99},
-    {id: '4', descricao: 'bergamota', preco: 1.00},
-    {id: '5', descricao: 'limao', preco: 0.75},
-    {id: '6', descricao: 'uva', preco: 0.99},
-    {id: '7', descricao: 'batata', preco: 1.99},
+    {id: 1, descricao: 'banana', preco: 1.50},
+    {id: 2, descricao: 'maca', preco: 1.20},
+    {id: 3, descricao: 'abacaxi', preco: 2.99},
+    {id: 4, descricao: 'bergamota', preco: 1.00},
+    {id: 5, descricao: 'limao', preco: 0.75},
+    {id: 6, descricao: 'uva', preco: 0.99},
+    {id: 7, descricao: 'batata', preco: 1.99},
 ]
 
+
+function incrementaID(){
+    let ultimoProdutoCadastrado = listaProdutos[listaProdutos.length - 1]//pega o ultimo da lista
+    return ultimoProdutoCadastrado.id + 1
+}
 
 function cadastrarProduto(){
     console.log(`A opção selecionada foi: ${opcaoSelecionada} - Cadastrar Produto`)
     let produto = {//montar o objeto
-        id: validaConversaoStringParaNumber(parseInt(prompt(`Digite o codigo do produto:`))),//validar a entrada
+        id: incrementaID(),// função que gera novo ID
         descricao: prompt(`Digite a descricao do produto:`),//pegar a entrada
         preco: validaConversaoStringParaFloat(parseFloat(prompt(`Digite o preco do produto: (Ex: não digite R$ ou $, apenas números com casas decimais.)`).replace(',','.'))),//validar a entrada
     }
@@ -77,7 +82,7 @@ function excluirProduto(){
 
 function buscarProdutoPorId(){
     console.log(`A opção selecionada foi: ${opcaoSelecionada} - Buscar Produto por código`)
-    let codigoProduto = prompt(`Digite o codigo do produto:`)
+    let codigoProduto = parseInt(prompt(`Digite o codigo do produto:`))
     console.table(listaProdutos.filter(item => item.id === codigoProduto))
     alert('Operação realizada com sucesso!')
     console.log(`Voltando ao menu`)
@@ -134,6 +139,14 @@ function acaoSair(opcaoSelecionada){
     sair = opcaoSelecionada
 }
 
+function verificaSeTodosOsProdutosCadastradosPossuemPrecoValido(){
+    if(listaProdutos.find(item => isNaN(item.preco))){
+        alert('Existe um produto com preço inválido!')
+    }else{
+        alert('Todos os produtos estão com preços válidos')
+    }
+}
+
 function main(){
     while(sair !== 0){
         switch(opcaoSelecionada){
@@ -158,6 +171,9 @@ function main(){
             case 7:
                 verificarTotalPatrimonioLoja()
                 break;
+            case 8:
+                verificaSeTodosOsProdutosCadastradosPossuemPrecoValido()
+                break;
             case 0:
                 acaoSair(opcaoSelecionada)
                 break;
@@ -172,6 +188,7 @@ function main(){
             5 - Buscar lista de produtos e mostrar apenas descrição\n
             6 - Buscar lista de produtos por descricao\n
             7 - Verificar total de patrimonio da loja\n
+            8 - Verificar se existe preço inválido\n
             0 - Sair\n
             `))
 
