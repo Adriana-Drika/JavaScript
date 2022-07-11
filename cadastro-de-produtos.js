@@ -135,7 +135,6 @@ function acaoSair(opcaoSelecionada){
 }
 
 function main(){
-    debugger
     while(sair !== 0){
         switch(opcaoSelecionada){
             case 1:
