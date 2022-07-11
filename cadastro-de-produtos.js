@@ -50,7 +50,7 @@ let listaProdutos = [
 
 function cadastrarProduto(){
     console.log(`A opção selecionada foi: ${opcaoSelecionada} - Cadastrar Produto`)
-    var produto = {//montar o objeto
+    let produto = {//montar o objeto
         id: validaConversaoStringParaNumber(parseInt(prompt(`Digite o codigo do produto:`))),//validar a entrada
         descricao: prompt(`Digite a descricao do produto:`),//pegar a entrada
         preco: validaConversaoStringParaFloat(parseFloat(prompt(`Digite o preco do produto: (Ex: não digite R$ ou $, apenas números com casas decimais.)`).replace(',','.'))),//validar a entrada
@@ -85,7 +85,7 @@ function buscarProdutoPorId(){
 
 function buscarProdutoPorDescricao(){
     console.log(`A opção selecionada foi: ${opcaoSelecionada} - Buscar lista de produtos por descricao`)
-    var descricaoProduto = prompt(`Digite a descricao do produto:`)
+    let descricaoProduto = prompt(`Digite a descricao do produto:`)
     // esta filtrando por descricao selecionada e no map devolvendo uma nova lista com apenas a propriedade preco e descicao
     console.table(listaProdutos.filter(item => item.descricao === descricaoProduto), ['descricao'])
     alert('Confira a lista dos produtos solicitados!')
