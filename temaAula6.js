@@ -99,7 +99,7 @@ const incrementaID = () => {
 const cadastrarColaborador = () => {
   let colaborador = new Colaborador(prompt(`Digite o nome do colaborador:`), [])
   listaColaboradores.push(colaborador)
-  debugger
+
   alert(`Colaborador ${colaborador.nome} cadastrado com sucesso!`)
 }
 
