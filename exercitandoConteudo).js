@@ -21,15 +21,23 @@ Observação/Dicas:
 class Filhos {
     constructor(nome){
         this.nome = nome
-     
+        
     }
-
 }
-const nomeFilhos = new Filhos 
+
+const listaFilhos = []
+
+const cadastrarFilho = () => {
+    let filho = new Filhos(prompt(`Digite o nome do filho:`), [])
+    listaFilhos.push(filho)
+  
+    alert(`Filho ${filho.nome} cadastrado com sucesso!`)
+  }
 
 
-
-
+const buscarListaFilhos = (nome) => {
+    return listaFilhos.filter(filho => filho.nome === nome)[0]
+}
 
 let menu = () => {
     let opcaoMenu = parseInt(prompt(`
@@ -38,17 +46,22 @@ let menu = () => {
     2-Apresente lista de filhos
     3-Encerrar/Sair
     `))
+
     switch(opcaoMenu){
     case 1:
-         cadastrarFilhos()
+         cadastrarFilho()
          break;
     case 2:
-        console.table(listaFilhos, [`nome`])
+        console.table(listaFilhos, [ `nome`])
         alert(`Lista apresentada no console!`)
-        break;    
-        //aqui eu coloco os casos conforme já vimos nos programas anteriores
-    }
-    menu() // aqui eu chamo a função recursivamente
+        break;
+    case 3:
+        alert(`Até logo`)    
+        return;
+    default: 
+        alert(`Opcao Inválida`)
+   }    
+    menu() 
 }
 
 menu();
