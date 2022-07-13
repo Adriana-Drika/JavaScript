@@ -28,38 +28,42 @@ class Filhos {
 const listaFilhos = []
 
 const cadastrarFilho = () => {
-    let filho = new Filhos(prompt(`Digite o nome do filho:`), [])
+    let filho = new Filhos(prompt(`Digite o nome do filho:`))
     listaFilhos.push(filho)
   
     alert(`Filho ${filho.nome} cadastrado com sucesso!`)
   }
 
 
-const buscarListaFilhos = (nome) => {
+const buscarFilhoPorNome = (nome) => {
     return listaFilhos.filter(filho => filho.nome === nome)[0]
 }
 
-let menu = () => {
+const menu = () => {
     let opcaoMenu = parseInt(prompt(`
-    Selecione:\n
-    1-Cadastro de Filhos
-    2-Apresente lista de filhos
-    3-Encerrar/Sair
+        Selecione:\n
+        1-Cadastro de Filhos
+        2-Apresente lista de filhos
+        3-Buscar Filho por nome
+        4-Encerrar/Sair
     `))
 
     switch(opcaoMenu){
-    case 1:
-         cadastrarFilho()
-         break;
-    case 2:
-        console.table(listaFilhos, [ `nome`])
-        alert(`Lista apresentada no console!`)
-        break;
-    case 3:
-        alert(`Até logo`)    
-        return;
-    default: 
-        alert(`Opcao Inválida`)
+        case 1:
+            cadastrarFilho()
+            break;
+        case 2:
+            console.table(listaFilhos, [`nome`])
+            alert(`Lista apresentada no console!`)
+            break;
+        case 3:
+            console.log(buscarFilhoPorNome(prompt('Digite o nome do filho:')))
+            return;
+        case 4:
+            alert(`Até logo`)    
+            return;
+        default: 
+            alert(`Opcao Inválida`)
    }    
     menu() 
 }
