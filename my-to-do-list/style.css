@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
+
+* {
+    font-family: Montserrat;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.task {
+    border: 1px solid;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.form-to-do {
+    border: 1px solid;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo {
+    text-align: center;
+    background: #4991fd;
+    color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-bottom: none;
+    font-size: 25px;
+}
+input#campoTexto {
+    width: 80%;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+button#adicionar {
+    width: 19%;
+}
+
+.task button {
+    background: transparent;
+    border: none;
+    width: 24px;
+    margin: 0 5px;
+}
+
+.status-emaberto {
+    background: #f17979;
+}
+
+.status-concluido {
+    background: #79f195;
+}
